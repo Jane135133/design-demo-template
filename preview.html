@@ -1,0 +1,200 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>交互方案演示 · 通用模板</title><style>
+:root{--blue:#427cff;--ink:#202d41;--muted:#8591a5;--paper:#f5f7fa;--line:#e5e9ef;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:var(--paper)}[hidden]{display:none!important}button,input{font:inherit}button{cursor:pointer;color:inherit;background:none;border:0;min-height:44px}button:focus-visible,a:focus-visible{outline:3px solid #88adff;outline-offset:3px}a{color:inherit;text-decoration:none}.workspace-header{height:88px;padding:0 4.2%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);background:#ffffffb0}.wordmark{display:flex;align-items:center;gap:12px}.brand-symbol{width:36px;height:36px;border-radius:12px;background:var(--blue);color:white;display:grid;place-items:center;font-weight:700;font-size:23px}.wordmark strong{font-size:22px;letter-spacing:-.6px}#brand-logo{max-width:130px;height:36px;object-fit:contain}#brand-context{font-size:12px;color:var(--muted);margin-left:8px}.header-right{display:flex;gap:16px;align-items:center;font-size:12px}.draft-label{display:flex;align-items:center;gap:8px;color:#6e7c90}.draft-label i{width:6px;height:6px;border-radius:50%;background:#5ca78b}#guide-toggle,#guide-floating{border:1px solid var(--line);background:#ffffffb0;border-radius:10px;padding:0 12px}#guide-count{margin-left:6px;color:var(--muted)}#presentation{padding:0 12px}.workspace{max-width:1480px;display:grid;grid-template-columns:320px minmax(410px,1fr) 264px;gap:46px;margin:auto;padding:28px 48px 40px;align-items:start}.eyebrow{font-size:10px;letter-spacing:2px;font-weight:650;color:#8a96a7}.control-panel{padding-top:12px}h1{font-size:31px;line-height:1.55;letter-spacing:-1px;font-weight:620;margin:22px 0 26px}.control-section{padding:23px 0;border-top:1px solid var(--line)}.section-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.section-heading h2{font-size:13px;font-weight:620;margin:0}.section-heading span{font-size:12px;color:#9aa4b2}.layout-options{display:grid;gap:9px}.option{border:1px solid #e1e6ee;padding:13px 14px;border-radius:11px;display:flex;gap:13px;align-items:center;text-align:left;background:#ffffff90;min-height:68px;transition:background .18s,border-color .18s}.option.active{background:#edf3ff;border-color:#aac7ff}.option b{display:block;font-size:13px;font-weight:600}.option small{display:block;font-size:12px;color:#8591a5;line-height:1.6;margin-top:4px}.mini-layout{width:33px;height:38px;border:1px solid #c0cddd;border-radius:5px;background:white;padding:5px;display:flex;flex-direction:column;gap:4px;flex-shrink:0}.mini-layout i{height:5px;background:#b5c6df;border-radius:1px}.mini-layout i:last-child{background:#dfe6ef}.check{margin-left:auto;color:var(--blue);opacity:0}.active .check{opacity:1}.local-options{display:grid;grid-template-columns:1fr 1fr;gap:9px}.local-options .option{padding:12px 10px}.reset-button{font-size:12px;color:#728097;margin-top:6px;padding:0}.stage{display:flex;align-items:center;flex-direction:column;position:sticky;top:28px;min-width:410px}.stage-label{width:390px;text-align:center;font-size:12px;color:#8491a4;margin-bottom:17px;line-height:1.6}.phone-shell{border-radius:53px;background:#23262b;padding:9px;box-shadow:0 0 0 1px #1b1e22,0 0 0 3px #dde1e6,0 25px 50px -20px #29395250;position:relative}.phone-shell:before{content:"";position:absolute;left:-4px;top:140px;width:3px;height:65px;background:#bac0c8;border-radius:4px}.phone-shell:after{content:"";position:absolute;right:-4px;top:180px;width:3px;height:75px;background:#bac0c8;border-radius:4px}.phone{width:390px;height:844px;background:#f3f7fb;border-radius:44px;overflow:hidden;position:relative;color:#242a32;font-size:13px}.statusbar{position:absolute;top:0;left:0;right:0;z-index:10;height:54px;padding:19px 28px 0;display:flex;justify-content:space-between;pointer-events:none}.statusbar b{font-size:14px}.island{position:absolute;width:116px;height:32px;top:11px;left:137px;border-radius:23px;background:#111316}.home-indicator{position:absolute;bottom:9px;width:120px;height:4px;left:135px;border-radius:3px;background:#28313e;z-index:10}.guide-panel{position:fixed;right:24px;top:110px;width:288px;max-height:calc(100vh - 134px);z-index:30;background:#ffffffed;backdrop-filter:blur(18px);border:1px solid #e0e7f0;border-radius:17px;box-shadow:0 12px 34px #344d7114;display:flex;flex-direction:column;overflow:auto}.guide-panel-head{padding:20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.guide-panel-head span{font-size:11px;color:var(--muted)}.guide-panel h2{font-size:17px;margin:7px 0 0}.guide-panel-head button{font-size:25px;color:#9aa4b2;width:44px}.guide-summary{display:flex;align-items:center;justify-content:space-between;padding:8px 20px;font-size:12px;color:#7e8b9c}.guide-summary button{font-size:12px}#guide-list{padding:0 14px}.guide-item{padding:16px 12px;border:1px solid var(--line);border-radius:10px;margin:0 0 12px;background:#f8fafc}.guide-item label{display:flex;align-items:center;gap:8px;min-height:44px;font-size:13px}.guide-item input{width:18px;height:18px}.guide-item p{font-size:12px;line-height:1.9;color:#6f7f91}.guide-item p b{margin-right:8px;font-weight:500;color:#3b4c62}.guide-panel footer{padding:16px;text-align:center;color:#8d99a9;font-size:11px;border-top:1px solid var(--line)}.presentation-tools{display:none}.presentation-mode .workspace-header,.presentation-mode .control-panel{display:none}.presentation-mode .workspace{display:flex;justify-content:center;padding:30px 20px}.presentation-mode .presentation-tools{display:flex;gap:20px;position:fixed;right:24px;top:20px;z-index:25;font-size:12px}.presentation-mode .stage{position:relative;top:0}.guide-open .workspace{grid-template-columns:320px minmax(410px,1fr) 264px}
+/* Replace only this demo layer to insert a new product. */
+#demo-root{position:absolute;inset:54px 0 25px}.sample-view{height:100%;padding:14px 18px;background:linear-gradient(150deg,#ecf4fc,#f9fbfd 55%,#eef5fa);display:flex;flex-direction:column;gap:18px}.sample-header{display:flex;justify-content:space-between;align-items:center;padding:12px 2px}.sample-header h2{font-size:22px;margin:0;font-weight:600}.sample-header button{width:44px;border-radius:50%;background:#fff;box-shadow:0 3px 12px #456c8610}.sample-search{border-radius:20px;padding:14px 16px;background:#ffffffb8;color:#8b98aa;box-shadow:0 4px 14px #4c7d9f15}.sample-banner{height:140px;background:linear-gradient(125deg,#e2edfc,#dce8f5);border-radius:18px;padding:23px;color:#6681a4;position:relative;overflow:hidden}.sample-banner h3{font-size:19px;margin:4px 0 10px}.sample-banner p{font-size:12px;line-height:1.8;margin:0}.sample-banner:after{content:"";position:absolute;right:-24px;bottom:-50px;border:22px solid #ffffff60;width:150px;height:150px;border-radius:50%}.sample-list{display:grid;gap:12px}.sample-card{padding:16px;background:#ffffffc9;border-radius:15px;box-shadow:0 4px 14px #4c7d9f15;display:flex;gap:12px;align-items:center}.sample-picture{width:48px;height:48px;border-radius:13px;background:linear-gradient(140deg,#dae7f8,#c2d4ec);flex-shrink:0;display:grid;place-items:center;color:#7f9bbe;font-size:20px}.sample-card b{font-size:14px;display:block}.sample-card p{font-size:12px;color:#8c99aa;margin:7px 0 0}.sample-caption{font-size:11px;color:#a1adbb;text-align:center;margin:auto 0 0}.sample-actions{display:flex;gap:10px}.sample-actions button{background:#4d83f9;color:white;flex:1;border-radius:14px;min-height:60px;font-size:14px;box-shadow:0 4px 14px #3678f52b}.sample-actions button+button{background:#e8eef8;color:#607796}.sample-actions.primary button:first-child{flex:2}.sample-actions.primary button+button{flex:1}.sample-view.layout-b .sample-banner{order:3;height:110px}.sample-view.layout-b .sample-list{order:2}.sample-view.layout-b .sample-caption{order:4}.sample-view.layout-b .sample-actions{order:5}.sample-view.plain .sample-search,.sample-view.plain .sample-card{background:#fff;box-shadow:none;border:1px solid #e7edf3}.sample-toast{position:absolute;bottom:100px;left:35px;right:35px;padding:13px;border-radius:12px;text-align:center;background:#24334bd9;color:#fff;font-size:13px;z-index:20}
+@media(max-height:950px) and (min-width:761px){.phone-shell{zoom:.76}.stage-label{width:310px}}@media(max-width:1199px){.workspace,.guide-open .workspace{grid-template-columns:280px minmax(350px,1fr);gap:28px;padding:28px 30px}.guide-open .control-panel{visibility:hidden}.guide-open .guide-panel{left:24px;right:auto}.stage{min-width:330px}}@media(max-width:760px){.workspace-header{height:72px;padding:0 18px}.brand-symbol{width:30px;height:30px}.wordmark strong{font-size:17px}#brand-context,.draft-label{display:none}.header-right{gap:8px}#presentation{display:none}.workspace,.guide-open .workspace{display:flex;flex-direction:column;padding:25px 16px;align-items:center;gap:25px}.control-panel{width:min(100%,390px)}h1{font-size:25px}.stage{min-width:0;width:100%;position:relative;top:0}.phone-shell{zoom:.82}.guide-open .control-panel{visibility:visible}.guide-panel,.guide-open .guide-panel{left:auto;right:12px;top:84px;max-height:calc(100vh - 100px);width:min(320px,calc(100vw - 24px))}.stage-label{width:100%}.presentation-mode .presentation-tools{position:static;justify-content:center;margin-bottom:20px}.presentation-mode .workspace{padding-top:20px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Airy studio theme: decoration stays outside the demo. */
+:root{--blue:#4669ee;--ink:#272923;--muted:#8a8d83;--paper:#f8f9f5;--line:#e4e7de}
+body{background:radial-gradient(ellipse at 76% 48%,#e9f0ff88,transparent 42%),#f8f9f5}
+.workspace-header{height:94px;background:#ffffffb8;border-bottom:1px solid #e4e7de;padding:0 4.2%}
+.brand-symbol{background:#dcf68a;color:#282e20;border-radius:13px;transform:rotate(-7deg);box-shadow:2px 3px 0 #c8df80}
+.wordmark strong{letter-spacing:-.9px;font-weight:750}.draft-label{background:#f0f3e9;border:1px solid #e4e9da;padding:9px 12px;border-radius:30px}
+#guide-toggle,#guide-floating{background:white;border-radius:30px;padding:0 17px;border-color:#dfe3d8}
+#presentation{background:#292d26;color:white;border-radius:30px;padding:0 20px;box-shadow:0 3px 0 #0000000c}
+.workspace,.guide-open .workspace{grid-template-columns:310px minmax(410px,1fr);gap:70px;max-width:1160px;padding-top:36px}
+.control-panel{padding-top:18px}.eyebrow{color:#777e68;letter-spacing:2.6px}.eyebrow:before{content:'✳';color:#829b39;font-size:17px;margin-right:9px;vertical-align:middle}
+h1{font-size:34px;font-weight:720;line-height:1.42;letter-spacing:-1.5px;margin:20px 0 30px}
+.control-section{padding:22px 0}.section-heading h2{font-size:13px}.section-heading span{font-size:11px}
+.option{border-color:#e0e4d9;background:#fff;border-radius:17px;padding:15px;box-shadow:0 2px 3px #303c1903;transition:transform .2s,box-shadow .2s,border-color .2s,background .2s}
+.option:hover{transform:translateY(-2px);border-color:#b8c4a2;box-shadow:0 6px 15px #34421e08}.option:active{transform:translateY(0)}
+.option.active{background:#f0f6df;border-color:#b4cb77;box-shadow:0 0 0 1px #b4cb7720}.option small{color:#89907f}.check{color:#688833;font-weight:700}
+.mini-layout{border-color:#c9d2b9;border-radius:7px;transform:rotate(-4deg)}.mini-layout i{background:#b8ca90}.mini-layout i:last-child{background:#e5ebd9}
+.local-options .option{border-radius:15px}.reset-button{color:#737c66}.reset-button:hover{color:#466228}
+.stage{isolation:isolate;padding-top:4px}.stage:before{content:'';position:absolute;z-index:-1;top:130px;width:480px;height:480px;max-width:100%;border-radius:50%;background:linear-gradient(145deg,#e8edfd88,#e9f2dc77);box-shadow:0 0 0 24px #ffffff55,0 0 0 25px #e4e9df66;pointer-events:none}
+.stage-label{color:#828b78;font-size:11px;letter-spacing:.5px;margin-bottom:23px}.phone-shell{box-shadow:0 0 0 1px #343831,0 0 0 3px #e1e4dc,0 32px 55px -25px #303c3545}
+.guide-panel{border-color:#e0e5d6;border-radius:24px;box-shadow:0 18px 65px #35422618;background:#fffffff5}.guide-panel-head{padding:20px 22px}.guide-item{border-radius:16px;background:#f7f9f2}.guide-item input{accent-color:#789b3d}.guide-item p{color:#7b8570}
+.presentation-tools button{border-radius:30px;background:#ffffffdb;padding:0 17px;border:1px solid #e0e5d8}
+@media(max-width:1199px){.workspace,.guide-open .workspace{grid-template-columns:280px minmax(350px,1fr);gap:38px;padding:30px}}
+@media(max-width:760px){.workspace-header{height:76px;padding:0 16px}.workspace,.guide-open .workspace{display:flex;padding:22px 18px;gap:30px}h1{font-size:28px}.control-panel{padding-top:0}.stage:before{width:320px;height:320px}.header-right{gap:7px}#guide-toggle{padding:0 12px}}
+
+/* Expressive studio refinement */
+:root{--ink:#20251e;--line:#dce2d1;--paper:#f6f8ef}
+body{background:radial-gradient(ellipse at 82% 18%,#dceaffaa,transparent 43%),radial-gradient(ellipse at 18% 90%,#ecf3d4aa,transparent 40%),#f7f8f0}
+.workspace-header{background:#ffffffb5;margin:18px 26px 0;border:1px solid #ffffff;border-radius:24px;height:78px;box-shadow:0 6px 24px #394c2005}
+.brand-symbol{background:#d9fa64;box-shadow:3px 4px 0 #b6cf59;transform:rotate(-10deg);border-radius:12px;color:#283319}
+.wordmark strong{font-size:24px}.draft-label{background:#eaf4cd;border-color:#d8e8ad;color:#627337}
+#presentation{background:#272f22;box-shadow:0 4px 0 #b9d873;color:#f0ffca}#presentation:hover{background:#3e4b31}
+.workspace,.guide-open .workspace{padding-top:40px;gap:80px}
+.eyebrow{color:#6d7e43}.eyebrow:before{content:'✳';display:inline-block;font-size:26px;transform:rotate(12deg);margin-right:10px}
+h1{font-size:38px;line-height:1.38;font-weight:780;letter-spacing:-1.8px;margin-top:18px;margin-bottom:30px}
+.control-section{border-top-color:#d9e0cc}.section-heading span{background:#e9eedf;color:#7a8669;padding:4px 8px;border-radius:20px}
+.option{border-radius:20px;border:1px solid #dfe5d4;box-shadow:0 3px 0 #e7ebdf;padding:16px;gap:15px}.option:hover{border-color:#abc664;box-shadow:0 7px 18px #5b723218;transform:translateY(-3px)}
+.option.active{background:#e2f5ac;border-color:#aeca64;box-shadow:0 4px 0 #c4db8c}.option.active b{color:#344520}.option.active small{color:#71834d}.active .check{background:#344b22;color:#e9ffc0;width:23px;height:23px;border-radius:50%;display:grid;place-items:center;font-size:12px;flex-shrink:0}
+.mini-layout{width:36px;height:41px;background:#ffffffe0;border-color:#adc38a;box-shadow:2px 3px 0 #cadca9;transform:rotate(-7deg)}.mini-layout i{background:#a9c569}.mini-layout i:last-child{background:#d9e6c0}
+.local-options .option{padding:14px 11px;border-radius:17px}.reset-button{margin-top:9px}.reset-button:hover{color:#253d11}
+.stage:before{top:110px;width:520px;height:520px;max-width:none;background:linear-gradient(145deg,#d6e7ff,#e5efc4 85%);box-shadow:0 0 0 22px #ffffff70,0 0 0 23px #cddac077;transform:rotate(-10deg);border-radius:46% 54% 57% 43% / 48% 42% 58% 52%}
+.stage:after{content:'✳';position:absolute;top:90px;right:0;font-size:58px;line-height:1;color:#9bba52;transform:rotate(14deg);z-index:-1;pointer-events:none;text-shadow:2px 3px 0 #ffffff}
+.stage-label{background:#ffffffbd;border:1px solid #ffffff;border-radius:30px;padding:9px 15px;width:auto;max-width:390px;color:#718061;box-shadow:0 3px 12px #48612a08;margin-bottom:22px}
+.phone-shell{box-shadow:0 0 0 1px #353e2e,0 0 0 4px #edf1e6,0 35px 55px -20px #43583450}
+.guide-panel{border-radius:25px;border-color:#d5e2bd}.guide-panel-head{background:#edf6dc}.guide-item{background:#f8faef}.guide-panel h2{color:#3a4e27}
+.presentation-mode .stage:after{right:-60px}.presentation-mode .stage:before{opacity:.65}
+@media(max-width:1199px){.workspace,.guide-open .workspace{gap:42px}.stage:before{width:420px;height:460px}.stage:after{right:-8px;font-size:44px}}
+@media(max-width:760px){.workspace-header{margin:10px 10px 0;border-radius:20px;height:70px;padding:0 12px}.wordmark strong{font-size:17px}.workspace,.guide-open .workspace{padding:25px 20px;gap:34px}h1{font-size:32px}.stage:before{width:330px;height:420px;top:100px}.stage:after{right:2px;top:65px;font-size:38px}.stage-label{max-width:95%;font-size:10px}}
+
+/* Layout-led presentation workbench */
+:root{--ink:#292a2d;--muted:#8a8985;--line:#e5e3de;--blue:#526baf}
+body{background:#f5f4f0}.workspace-header{margin:0;height:82px;border-radius:0;border:0;border-bottom:1px solid #e5e3de;background:#fff;padding:0 40px;box-shadow:none}.brand-symbol{background:#ece9e1;box-shadow:none;transform:none;color:#3a3a37}.draft-label{background:#f4f3ef;border-color:#e8e6df;color:#79796f}#presentation{background:#30322f;color:white;box-shadow:none}
+.workspace,.guide-open .workspace{max-width:1440px;grid-template-columns:330px minmax(410px,1fr);gap:48px;padding:36px 48px;position:relative}.control-panel{background:#fff;border:1px solid #e8e6e0;border-radius:24px;padding:25px 23px;box-shadow:0 8px 28px #302a1d04}.eyebrow{font-size:9px;letter-spacing:1.6px;color:#929087}.eyebrow:before{display:none}h1{font-size:28px;letter-spacing:-1px;line-height:1.4;margin:14px 0 24px}.control-section{padding:18px 0;border-color:#eeeae4}.section-heading span{background:none;padding:0;color:#a19e96}.layout-options{grid-template-columns:1fr 1fr;gap:10px}.option{position:relative;box-shadow:none!important;border-radius:13px;background:#fafaf8;border-color:#e7e5df;padding:10px;gap:9px}.option.active{background:#f2f4fb;border-color:#9baace}.option.active b{color:#35476e}.option.active small{color:#8b91a0}.option:hover{transform:translateY(-2px);border-color:#a4afc8}.layout-options .option{display:flex;flex-direction:column;align-items:stretch;padding:9px;text-align:left}.layout-options .option b{font-size:11px}.option small{font-size:10px;line-height:1.6;color:#97958d}.mini-layout{display:none}.active .check{position:absolute;top:15px;right:15px;width:17px;height:17px;background:#526b8e;color:white;font-size:10px}.local-options{gap:10px}.local-options .option{display:flex;flex-direction:column;align-items:stretch;border-radius:13px;padding:10px}.local-options .option b{font-size:11px}.option-preview{height:72px;background:#eeede8;border-radius:8px;padding:10px 16px;display:flex;flex-direction:column;gap:5px;overflow:hidden}.option-preview i{display:block;border-radius:3px;background:#cacdc8;height:7px}.option-preview i:first-child{height:24px;background:#c1cbdc}.option-preview i:last-child{width:66%}.option[data-option=b] .option-preview i:first-child{order:3}.option[data-group=material] .option-preview{height:44px;position:relative;background:linear-gradient(130deg,#e5e9f1,#d9dfeb);padding:9px 15px}.option[data-group=material] .option-preview i{height:24px;background:#ffffff95;border:1px solid white;box-shadow:0 3px 6px #4f638215}.option[data-option=plain] .option-preview{background:#eeede8}.option[data-option=plain] .option-preview i{background:white;box-shadow:none;border-color:#dcded9}.option[data-group=action] .option-preview{height:38px;flex-direction:row;align-items:center;padding:8px}.option[data-group=action] .option-preview i{height:17px;width:50%;background:#9aaac8}.option[data-option=primary] .option-preview i:first-child{width:72%;background:#667ea7}.option[data-option=primary] .option-preview i:last-child{width:28%;background:#d8dfe9}.reset-button{font-size:11px;margin-top:0;color:#89877e}
+.stage{padding:0 0 25px;min-height:760px}.stage:before{inset:58px 0 0;width:auto;height:auto;max-width:none;border-radius:28px;background:#ebeae5;box-shadow:none;transform:none;border:1px solid #e3e1da}.stage:after{display:none}.stage-label{margin:0 0 30px;background:none;border:0;box-shadow:none;color:#858780;font-size:11px;max-width:100%;padding:0;min-height:28px;line-height:28px}.phone-shell{box-shadow:0 0 0 1px #363b39,0 0 0 3px #f9f9f6,0 30px 40px -20px #34372f45}.stage-note{font-size:10px;letter-spacing:2px;color:#a29f96;margin-top:25px}.guide-open .workspace{padding-right:320px;grid-template-columns:300px minmax(350px,1fr);gap:30px}.guide-panel{top:118px;right:22px;width:270px;border-radius:20px;border-color:#e4e1d8;box-shadow:none;background:#fff}.guide-panel-head{background:#f5f4ee}.guide-panel h2{color:#373933}.guide-item{background:#faf9f5;border-color:#ebe8e0}.guide-item p{color:#85867c}.presentation-mode .workspace{display:flex;padding:28px 20px}.presentation-mode .stage{width:650px}.presentation-mode .stage:before{opacity:.5}
+@media(min-width:761px) and (max-height:950px){.stage{min-height:740px}.phone-shell{zoom:.76}}
+@media(max-width:1199px){.workspace,.guide-open .workspace{grid-template-columns:300px minmax(350px,1fr);gap:25px;padding:28px}.guide-open .control-panel{visibility:visible}.guide-open .guide-panel{left:auto;right:20px;box-shadow:0 20px 60px #292a2920}}
+@media(max-width:760px){.workspace-header{height:72px;padding:0 16px}.workspace,.guide-open .workspace{display:flex;padding:20px 14px;gap:28px}.control-panel{width:min(100%,390px);padding:22px}.stage{min-height:0;padding-bottom:24px}.stage:before{inset:45px 0 0;width:auto;height:auto}.stage-label{font-size:10px;margin-bottom:24px}.stage-note{font-size:9px}.guide-panel,.guide-open .guide-panel{top:85px;right:12px}.presentation-mode .stage{width:100%}}
+
+/* Quiet, precise material and typography */
+:root{--ink:#1d1d1f;--muted:#86868b;--line:#e5e5e7;--blue:#0071e3;--paper:#f5f5f7;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+body{background:#f5f5f7}.workspace-header{height:78px;background:#ffffffbd;border-color:#e5e5e780;padding:0 4%;backdrop-filter:blur(20px)}.brand-symbol{width:32px;height:32px;border-radius:10px;background:#1d1d1f;color:white;font-size:19px}.wordmark strong{font-size:20px;letter-spacing:-.7px;font-weight:650}#brand-context{color:#86868b}.draft-label{background:none;border:0;color:#86868b;padding:0}.draft-label i{background:#8a9a8a;width:5px;height:5px}.header-right{gap:22px}#guide-toggle,#guide-floating{border:0;background:transparent;color:#55555a;border-radius:30px;font-size:12px}#presentation{background:#1d1d1f;color:#fff;font-size:12px;padding:0 19px;min-height:36px;box-shadow:none}#presentation:hover{background:#363638}
+.workspace,.guide-open .workspace{padding-top:44px;gap:56px}.control-panel{padding:28px 25px;border:0;border-radius:24px;box-shadow:0 3px 18px #00000003;background:white}.eyebrow{font-size:9px;letter-spacing:1.5px;color:#86868b}h1{font-size:30px;font-weight:650;line-height:1.35;letter-spacing:-1.1px;margin:15px 0 28px}.control-section{padding:21px 0;border-color:#ededee}.section-heading{margin-bottom:12px}.section-heading h2{font-size:12px;font-weight:600}.section-heading span{font-size:10px;color:#a1a1a6}.layout-options{display:grid;grid-template-columns:1fr;gap:8px}.option,.local-options .option,.layout-options .option{display:flex;flex-direction:row;align-items:center;background:#f5f5f7;border:1px solid transparent;padding:14px 13px;border-radius:12px;min-height:64px;box-shadow:none!important;transform:none;gap:10px}.option:hover{background:#eeeef0;border-color:transparent;transform:none}.option.active{background:#f5f8fd;border-color:#8aafd7}.option.active:hover{background:#eef4fb}.option b,.layout-options .option b,.local-options .option b{font-size:12px;font-weight:550;letter-spacing:-.1px}.option small{color:#86868b;font-size:10px;margin-top:5px;line-height:1.5}.option.active b{color:#1d1d1f}.option.active small{color:#7b8796}.check,.active .check{position:static;margin-left:auto;width:16px;height:16px;border-radius:50%;flex-shrink:0;background:#0071e3;color:white;font-size:10px;display:grid;place-items:center}.local-options{gap:8px}.local-options .option{padding:13px 11px}.reset-button{color:#6e6e73;font-size:11px;margin-top:5px}.reset-button:hover{color:#0071e3}.mini-layout,.option-preview{display:none}
+.stage:before{background:linear-gradient(180deg,#ededf0,#f0f0f2);border:1px solid #e8e8eb;border-radius:30px;inset:52px 0 0}.stage-label{font-size:11px;color:#6e6e73;letter-spacing:0;margin-bottom:32px}.phone-shell{box-shadow:0 0 0 1px #38383b,0 0 0 3px #e2e2e6,0 28px 42px -23px #00000055}.stage-note{color:#a1a1a6;letter-spacing:1.5px;font-size:9px;margin-top:28px}.guide-panel{background:#fffffff5;border:1px solid #e5e5e7;border-radius:22px;box-shadow:0 16px 50px #00000008}.guide-panel-head{background:#fff;border-color:#eeeef0}.guide-panel h2{color:#1d1d1f;font-weight:600}.guide-item{border:0;background:#f5f5f7;border-radius:13px}.guide-item p{color:#86868b}.guide-item p b{color:#6e6e73}.guide-item input{accent-color:#0071e3}.presentation-tools button{background:#ffffffd9;border-color:#e5e5e7;color:#55555a}
+@media(max-width:1199px){.workspace,.guide-open .workspace{gap:32px;padding:32px}.guide-open .guide-panel{box-shadow:0 18px 60px #00000014}}
+@media(max-width:760px){.workspace-header{height:70px;padding:0 16px}.header-right{gap:6px}.wordmark strong{font-size:17px}.workspace,.guide-open .workspace{padding:24px 16px;gap:30px}.control-panel{padding:24px}.stage:before{inset:46px 0 0}.stage-label{font-size:10px}h1{font-size:28px}}
+
+/* Align the two work surfaces; keep selection caption outside the canvas. */
+.stage{padding-top:30px;margin-top:0}.stage:before{inset:0 0 0}.stage-label{position:absolute;top:-31px;left:0;right:0;margin:0 auto;min-height:20px;line-height:20px;padding:0;text-align:center}.workspace,.guide-open .workspace{padding-top:58px}.presentation-mode .stage{padding-top:30px}.presentation-mode .workspace{padding-top:58px}
+@media(max-width:1199px){.workspace,.guide-open .workspace{padding-top:58px}}
+@media(max-width:760px){.workspace,.guide-open .workspace{padding-top:24px;gap:58px}.stage{padding-top:26px}.stage:before{inset:0}.stage-label{top:-29px;line-height:18px;min-height:18px}.presentation-mode .workspace{padding-top:54px}}
+
+/* Selection caption belongs inside the aligned stage surface. */
+.stage{padding-top:22px}.stage-label{position:static;top:auto;left:auto;right:auto;margin:0 auto 24px;min-height:20px;line-height:20px;text-align:center}.stage:before{inset:0}.workspace,.guide-open .workspace{padding-top:36px}.presentation-mode .stage{padding-top:22px}.presentation-mode .workspace{padding-top:30px}
+@media(max-width:1199px){.workspace,.guide-open .workspace{padding-top:32px}}
+@media(max-width:760px){.workspace,.guide-open .workspace{padding-top:24px;gap:28px}.stage{padding-top:20px}.stage-label{position:static;margin:0 auto 22px;line-height:18px;min-height:18px}.presentation-mode .workspace{padding-top:24px}}
+</style></head><body>
+<header class="workspace-header"><a class="wordmark" href="#" aria-label="演示首页"><span class="brand-symbol">D</span><img id="brand-logo" hidden alt="项目标志"><strong id="brand-name"></strong><span id="brand-context"></span></a><div class="header-right"><span class="draft-label"><i></i>交互演示</span><button id="guide-toggle" aria-expanded="false" aria-controls="guide-panel">讲解提示 <span id="guide-count"></span></button><button id="presentation">沉浸体验 ↗</button></div></header>
+<main class="workspace"><aside class="control-panel"><div id="eyebrow" class="eyebrow"></div><h1 id="project-title"></h1><div id="options"></div><button id="reset" class="reset-button">↻　查看设计推荐方案</button></aside><section class="stage" aria-label="方案演示展示区"><div id="stage-title" class="stage-label" aria-live="polite"></div><div class="phone-shell"><div id="phone" class="phone"><div class="statusbar"><b>9:41</b><div class="island"></div><span>▰</span></div><div id="demo-root"></div><div class="home-indicator"></div></div></div><div class="stage-note">LIVE PREVIEW　 /　交互方案实时预览</div></section></main>
+<aside id="guide-panel" class="guide-panel" hidden aria-label="讲解提示"><div class="guide-panel-head"><div><span>演示备忘</span><h2>讲解提示</h2></div><button id="guide-close" aria-label="关闭讲解提示">×</button></div><div class="guide-summary"><span id="guide-progress"></span><button id="guide-reset">重置勾选</button></div><div id="guide-list"></div><footer>勾选只记录讲解进度</footer></aside><div class="presentation-tools"><button id="guide-floating" aria-expanded="false">讲解提示</button><button id="exit-presentation">退出沉浸体验 ↙</button></div>
+<script>window.DEMO_CONFIG = {
+  "brand": {
+    "name": "DESIGN",
+    "context": "设计探索",
+    "logo": ""
+  },
+  "project": {
+    "eyebrow": "INTERACTION DEMO · TEMPLATE",
+    "title": [
+      "项目名称",
+      "交互方案演示"
+    ]
+  },
+  "defaultSelection": {
+    "layout": "a",
+    "material": "glass",
+    "action": "balanced"
+  },
+  "groups": [
+    {
+      "id": "layout",
+      "title": "布局方案",
+      "caption": "局部对比",
+      "options": [
+        {
+          "id": "a",
+          "title": "A · 布局方案一",
+          "description": "替换为这一版布局的特点"
+        },
+        {
+          "id": "b",
+          "title": "B · 布局方案二",
+          "description": "替换为另一版布局的特点"
+        }
+      ]
+    },
+    {
+      "id": "material",
+      "title": "UI 样式",
+      "caption": "局部对比",
+      "options": [
+        {
+          "id": "glass",
+          "title": "样式一",
+          "description": "替换为材质或视觉说明"
+        },
+        {
+          "id": "plain",
+          "title": "样式二",
+          "description": "替换为对比方案说明"
+        }
+      ]
+    },
+    {
+      "id": "action",
+      "title": "行动入口",
+      "caption": "局部对比",
+      "options": [
+        {
+          "id": "balanced",
+          "title": "等权入口",
+          "description": "两个入口相同视觉权重"
+        },
+        {
+          "id": "primary",
+          "title": "主入口优先",
+          "description": "一个主入口与一个次入口"
+        }
+      ]
+    }
+  ],
+  "guide": [
+    {
+      "id": "layout",
+      "title": "布局与信息分组",
+      "description": "讲清这一组方案解决什么问题，以及两版的主要差异。",
+      "demo": "切换布局方案，比较信息顺序与空间安排。"
+    },
+    {
+      "id": "material",
+      "title": "视觉与材质",
+      "description": "补充配色、背景、投影和可读性方面的设计理由。",
+      "demo": "切换 UI 样式，比较展示区的变化。"
+    },
+    {
+      "id": "action",
+      "title": "主次关系与操作",
+      "description": "说明主操作、次操作和关键交互的取舍。",
+      "demo": "切换入口布局，点击示例按钮体验反馈。"
+    }
+  ]
+};
+</script><script>// Replace renderDemo to connect a real product prototype; keep the platform shell.
+window.renderDemo=function(selection){
+ const root=document.querySelector('#demo-root');
+ root.innerHTML=`<div class="sample-view layout-${selection.layout} ${selection.material}"><header class="sample-header"><h2>页面标题</h2><button aria-label="示例页面工具">⋯</button></header><div class="sample-search">⌕　搜索内容</div><section class="sample-banner"><h3>演示内容区</h3><p>这里替换为新项目的页面与交互。<br>当前仅用于检查模板结构。</p></section><div class="sample-list">${['信息示例一','信息示例二','信息示例三'].map((text,i)=>`<article class="sample-card"><span class="sample-picture">${i+1}</span><div><b>${text}</b><p>替换为项目中的真实内容</p></div></article>`).join('')}</div><p class="sample-caption">通用占位示例</p><div class="sample-actions ${selection.action}"><button>主要操作</button><button>次要操作</button></div></div>`;
+ root.querySelectorAll('button').forEach(b=>b.onclick=()=>{root.querySelector('.sample-toast')?.remove();const toast=document.createElement('div');toast.className='sample-toast';toast.setAttribute('role','status');toast.textContent='示例交互：'+(b.getAttribute('aria-label')||b.textContent);root.append(toast);setTimeout(()=>toast.remove(),1600)});
+};
+</script><script>(()=>{'use strict';
+const config=window.DEMO_CONFIG,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let selection={...config.defaultSelection},checked=new Set();const storageKey='demo-template-guide-'+config.project.eyebrow;
+try{checked=new Set(JSON.parse(localStorage.getItem(storageKey)||'[]').filter(id=>config.guide.some(item=>item.id===id)))}catch{}
+$('#brand-name').textContent=config.brand.name;$('#brand-context').textContent=config.brand.context;
+if(config.brand.logo){$('#brand-logo').src=config.brand.logo;$('#brand-logo').hidden=false;$('.brand-symbol').hidden=true;$('#brand-name').hidden=true}
+$('#eyebrow').textContent=config.project.eyebrow;$('#project-title').innerHTML=config.project.title.map(escape).join('<br>');document.title=config.project.title.join(' · ');
+$('#options').innerHTML=config.groups.map((g,i)=>`<section class="control-section"><div class="section-heading"><h2>${escape(g.title)}</h2><span>${escape(g.caption)}</span></div><div class="${i===0?'layout-options':'local-options'}">${g.options.map(o=>`<button class="option" data-group="${escape(g.id)}" data-option="${escape(o.id)}" aria-pressed="false">${i===0?'<span class="mini-layout"><i></i><i></i><i></i></span>':''}<span><b>${escape(o.title)}</b><small>${escape(o.description)}</small></span>${i===0?'<span class="check">✓</span>':''}</button>`).join('')}</div></section>`).join('');
+function update(){ $$('[data-option]').forEach(el=>{const active=selection[el.dataset.group]===el.dataset.option;el.classList.toggle('active',active);el.setAttribute('aria-pressed',active)});$('#stage-title').textContent=config.groups.map(g=>g.options.find(o=>o.id===selection[g.id])?.title||'').join(' · ');window.renderDemo(selection);document.dispatchEvent(new CustomEvent('demo:change',{detail:{...selection}})); }
+$$('[data-option]').forEach(el=>el.onclick=()=>{selection[el.dataset.group]=el.dataset.option;update()});$('#reset').onclick=()=>{selection={...config.defaultSelection};update()};
+$('#guide-list').innerHTML=config.guide.map(g=>`<article class="guide-item"><label><input type="checkbox" data-check="${escape(g.id)}" ${checked.has(g.id)?'checked':''}><b>${escape(g.title)}</b></label><p><b>改动</b>${escape(g.description)}</p><p><b>演示</b>${escape(g.demo)}</p></article>`).join('');
+function progress(){ $('#guide-count').textContent=`${checked.size}/${config.guide.length}`;$('#guide-progress').textContent=`已讲 ${checked.size} / ${config.guide.length}`;try{localStorage.setItem(storageKey,JSON.stringify([...checked]))}catch{} }
+$$('[data-check]').forEach(el=>el.onchange=()=>{el.checked?checked.add(el.dataset.check):checked.delete(el.dataset.check);progress()});$('#guide-reset').onclick=()=>{checked.clear();$$('[data-check]').forEach(el=>el.checked=false);progress()};
+function guide(open){$('#guide-panel').hidden=!open;document.body.classList.toggle('guide-open',open);$$('#guide-toggle,#guide-floating').forEach(b=>b.setAttribute('aria-expanded',open))}
+$$('#guide-toggle,#guide-floating').forEach(b=>b.onclick=()=>guide($('#guide-panel').hidden));$('#guide-close').onclick=()=>guide(false);
+function presentation(on){document.body.classList.toggle('presentation-mode',on);$('#presentation').setAttribute('aria-pressed',on)}$('#presentation').onclick=()=>presentation(true);$('#exit-presentation').onclick=()=>presentation(false);document.addEventListener('keydown',e=>{if(e.key==='Escape'){guide(false);presentation(false)}});update();progress();
+})();
+</script></body></html>
